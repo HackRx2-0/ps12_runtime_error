@@ -1,0 +1,113 @@
+.productlist{
+  margin-top: 70px !important;
+}
+.product-grid{
+    font-family: 'Antic Slab', serif;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    width: 300px;
+}
+.product-grid:hover{ box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+.product-grid .product-image{
+    overflow: hidden;
+    position: relative;
+}
+.product-grid .product-image a.image{ display: block; }
+.product-grid .product-image img{
+    width: 100%;
+    height: auto;
+}
+.product-grid .product-sale-label{
+    color: #fff;
+    background-color: #2d2d7f;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 10px 6px 9px;
+    position: absolute;
+    left: 7px;
+    top: 7px;
+}
+.product-grid .product-links{
+    width: 50px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+.product-grid:hover .product-links{ opacity: 1; }
+.product-grid .product-links li{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transform: translateX(-50px);
+    filter: blur(5px);
+    transition: all 0.4s ease 0s;
+}
+.product-grid .product-links li:nth-child(even){ transform: translateX(50px); }
+.product-grid:hover .product-links li{
+    filter: blur(0);
+    transform: translateX(0);
+}
+.product-grid .product-links li a svg{
+    color: #666;
+    background: rgba(255,255,255,0.9);
+    font-size: 16px;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+    display: block;
+    transition: all 0.3s ease 0s;
+}
+.product-grid .product-links li a svg:hover{
+    color: #fff;
+    background: #2d2d7f;
+}
+.product-grid .product-content{
+    background-color: #fff;
+    padding: 15px 10px 3px;
+}
+.product-grid .title{
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 0 0 10px;
+}
+.product-grid .title a{
+    color: #222;
+    transition: all 0.3s ease 0s;
+}
+.product-grid .title a:hover{ color: #2d2d7f; }
+.product-grid .rating{
+    width: 100px;
+    padding: 0;
+    margin: 0 0 9px;
+    list-style: none;
+    vertical-align: top;
+    display: inline-block;
+}
+.product-grid .rating li{
+    color: #222;
+    font-size: 11px;
+    display: inline-block;
+}
+.product-grid .price{
+    color: #2d2d7f;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: right;
+    width: calc(100% - 85px);
+    display: inline-block;
+}
+
+@media screen and (max-width:760px){
+    .product-grid{
+      margin: 0 0 30px;
+      width: 80vw;
+    }
+}

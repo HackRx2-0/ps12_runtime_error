@@ -117,6 +117,11 @@ def dashboard():
         return render_template('dashboard.html', username=session['username'], email1=session['email1'])
     return redirect(url_for('login'))
 
+@app.route('/products')
+def products():
+    if 'loggedin' in session:
+        return render_template('listproducts.html',username=session['username'], email1=session['email1'])
+    return redirect(url_for('login'))
+
 
 app.run(debug=True )
-
