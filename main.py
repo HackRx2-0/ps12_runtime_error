@@ -14,10 +14,15 @@ app.config['MYSQL_DB'] = 'recommendation_system'
 
 mysql = MySQL(app)
 
+
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template("index.html")
+    if 'loggedin' in session:
+        return render_template('index.html', username=session['username'],
+                               email1=session['email1'])
+    return render_template('index.html', username="", email1="")
+
 
 @app.route("/register/", methods=['GET', 'POST'])
 def register():
@@ -68,6 +73,17 @@ def register():
     return render_template('register.html', msg=msg)
 
 
+
+@app.route('/signin/logout')
+def logout():
+    session.pop('loggedin', None)
+    session.pop('id', None)
+    session.pop('username', None)
+    session.pop('email1', None)
+    session.pop('mobile', None)
+    return redirect(url_for('signin'))
+
+
 @app.route("/signin/", methods=['GET', 'POST'])
 def signin():
     msg = ''
@@ -88,12 +104,19 @@ def signin():
                 session['lname'] = account['lname']
                 session['email1'] = account['email']
                 session['mobile'] = account['mobile']
-                msg = "Success!"
+                return redirect(url_for('dashboard'))
             else:
                 msg = 'Incorrect details!'
         else:
             msg = ' Please fill the form!'
     return render_template('signin.html', msg=msg)
 
+@app.route('/dashboard')
+def dashboard():
+    if 'loggedin' in session:
+        return render_template('dashboard.html', username=session['username'], email1=session['email1'])
+    return redirect(url_for('login'))
+
 
 app.run(debug=True )
+

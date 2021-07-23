@@ -45,11 +45,24 @@
             <li>
               <a href="#">Team</a>
             </li>
-            <li>
-              <a href="#">Sign in</a>
-            </li>
-            <li>
-              <a href="/register">Sign up</a>
+
+            {% if username %}
+                <li>
+                  <a href="{{ url_for('dashboard') }}">Dashboard</a>
+                </li>
+                <li>
+                  <a href="{{ url_for('logout') }}">Logout</a>
+                </li>
+
+            {% endif %}
+                {% if username=="" %}
+                  <li>
+                    <a href="{{ url_for('signin') }}">Sign in</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('register') }}">Sign up</a>
+                  </li>
+                {% endif %}
             </li>
           </ul>
         </div>
