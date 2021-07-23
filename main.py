@@ -68,5 +68,32 @@ def register():
     return render_template('register.html', msg=msg)
 
 
+@app.route("/signin/", methods=['GET', 'POST'])
+def signin():
+    msg = ''
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if len(username) > 0 and len(password) > 0:
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute('SELECT * FROM useraccount WHERE username = %s', (username, ))
+            account = cursor.fetchone()
+            mysql.connection.commit()
+            cursor.close()
+            if account and bcrypt.checkpw(password.encode('utf-8'), account['pwd'].encode('utf-8')):
+                session['loggedin'] = True
+                session['id'] = account['id']
+                session['username'] = account['username']
+                session['fname'] = account['fname']
+                session['lname'] = account['lname']
+                session['email1'] = account['email']
+                session['mobile'] = account['mobile']
+                msg = "Success!"
+            else:
+                msg = 'Incorrect details!'
+        else:
+            msg = ' Please fill the form!'
+    return render_template('signin.html', msg=msg)
+
 
 app.run(debug=True )

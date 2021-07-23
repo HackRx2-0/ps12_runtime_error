@@ -43,7 +43,7 @@
               <a href="/home" class="active active-first">Home</a>
             </li>
             <li>
-              <a href="/signin">Sign in</a>
+              <a href="/register">Sign up</a>
             </li>
           </ul>
         </div>
@@ -56,57 +56,31 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-sm-12 order-md-2 order-sm-1">
-          <br><br><br><br><br><img src="{{url_for('static', filename='./assets/bgreg.png')}}" alt="Image" class="img-fluid">
+          <img src="{{url_for('static', filename='./assets/bglogin.png')}}" alt="Image" class="img-fluid">
         </div>
         <div class="col-md-6 col-sm-12 contents">
           <div class="row justify-content-center">
             <div class="col-md-8">
               <div class="mb-4">
-              <h3 style="color:#00d7f9;"><strong>Sign Up</strong></h3>
+              <h3 style="color:#00d7f9;"><strong>Sign In</strong></h3>
               <p class="mb-4" style="color:#fff;">{{msg}}</p>
             </div>
-            <form action="{{ url_for('register') }}" method="post">
+            <form action="{{ url_for('signin') }}" method="post">
 
               <div class="form-group first">
                 <label for="username">Username</label>
                 <input type="text" class="form-control" id="username" name="username">
 
               </div>
-                <div class="form-group first">
-                <label for="fname" >First Name</label>
-			    <input id="fname" class="form-control" name="fname" type="text">
-              </div>
-
-
-              <div class="form-group first">
-                <label for="lname" >Last Name</label>
-			    <input id="lname" class="form-control" name="lname" type="text">
-              </div>
-
-                <div class="form-group first">
-                <label for="mobile" >Mobile Number</label>
-			<input id="mobile" class="form-control" name="mobile" type="text">
-              </div>
-
-                <div class="form-group first">
-                <label for="email" >Email</label>
-			<input id="email" class="form-control" name="email" type="email">
-              </div>
 
               <div class="form-group first mb-4">
                 <label for="pwd" >Password</label>
 			<input id="pwd" class="form-control" name="password" type="password">
-
               </div>
-             <div class="form-group last mb-4">
-                <label for="cpwd" >Confirm Password</label>
-			<input id="cpwd" class="form-control" name="cpassword" type="password">
+              <input type="submit" value="Login" class="btn text-white btn-block btn-success">
 
-              </div>
+                <p class="mb-4" style="margin-top:2px;"><a href="{{ url_for('register') }}">Create an account</a></p>
 
-              <input type="submit" value="Register" class="btn text-white btn-block btn-success">
-              <br>
-              <p class="mb-4"><a href="{{ url_for('signin') }}"> Already Registered</a></p>
             </form>
             </div>
           </div>
