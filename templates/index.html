@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RupicCo</title>
+
+  <!--  Styles  -->
+  <!-- <link rel="stylesheet" href="styles/index.processed.css">-->
+  <link rel="stylesheet" href="{{url_for('static',filename = 'css/index.css')}}">
+  <!--  -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg main-nav px-0">
+        <a class="navbar-brand" href="/">
+          <div class="company-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-bank company-logo" viewBox="0 0 16 16">
+              <path d="M8 .95 14.61 4h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.379l.5 2A.5.5 0 0 1 15.5 17H.5a.5.5 0 0 1-.485-.621l.5-2A.5.5 0 0 1 1 14V7H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 4h.89L8 .95zM3.776 4h8.447L8 2.05 3.776 4zM2 7v7h1V7H2zm2 0v7h2.5V7H4zm3.5 0v7h1V7h-1zm2 0v7H12V7H9.5zM13 7v7h1V7h-1zm2-1V5H1v1h14zm-.39 9H1.39l-.25 1h13.72l-.25-1z"/>
+            </svg>
+            <h5>RupiCo</h5>
+            </div>
+				</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar icon-bar-1"></span>
+                        <span class="icon-bar icon-bar-2"></span>
+                        <span class="icon-bar icon-bar-3"></span>
+                    </button>
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav ml-auto text-uppercase f1">
+            <li>
+              <a href="#home" class="active active-first">home</a>
+            </li>
+            <li>
+              <a href="#about">about us</a>
+            </li>
+            <li>
+              <a href="#team">team</a>
+            </li>
+            <li>
+              <a href="#contact">contact</a>
+            </li>
+            <li>
+              <a href="#careers">Sign in</a>
+            </li>
+            <li>
+              <a href="#careers">Sign up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- /.container -->
+  </header>
+  <div class="home-content container">
+    <div  class = "row">
+      <div class="homepage-text col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <div class="text-box">
+          <h1>Welcome!!</h1>
+          <p>We envision to be a top ranking National Bank of International Standards committed
+             to augmenting stake holders' value through concern, care and competence.
+           We are obliged by Constitution and statute to act in accordance with the interests of the country as a whole</p>
+        </div>
+        <a href="/register"><button type="button" class="btn btn-light">Get Started</button></a>
+      </div>
+      <div class="homepage-vector col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <a href="https://www.vecteezy.com/free-vector/cartoon">
+        <img src="{{url_for('static',filename = 'assets/homepage.png')}}" alt="Cartoon Vectors by Vecteezy">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- Scripts -->
+  <script src="{{url_for('static',filename = 'js/main.js')}}"></script>
+
+</body>
+
+</html>
