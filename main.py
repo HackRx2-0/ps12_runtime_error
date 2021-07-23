@@ -123,5 +123,12 @@ def products():
         return render_template('listproducts.html',username=session['username'], email1=session['email1'])
     return redirect(url_for('login'))
 
+@app.route('/aboutus')
+def aboutus():
+    if 'loggedin' in session:
+        return render_template('aboutus.html', username=session['username'],
+                               email1=session['email1'])
+    return render_template('aboutus.html', username="", email1="")
+
 
 app.run(debug=True )
